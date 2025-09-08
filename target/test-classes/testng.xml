@@ -1,0 +1,13 @@
+ <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="NopCommerce Suite" verbose="1" preserve-order="true">
+  <test name="Smoke">
+    <classes>
+      <class name="testcases.RegisterTest"/>
+      <class name="testcases.LoginTest"/>
+      <class name="testcases.SearchTest"/>
+      <class name="testcases.ProductAndCartTest"/>
+      <class name="testcases.WishlistTest"/>
+      <class name="testcases.PriceFilterTest"/>
+    </classes>
+  </test>
+</suite>
