@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="11" passed="8" failed="2" skipped="1">
+<testng-results ignored="0" total="13" passed="8" failed="5" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-08T14:29:06 IST" name="NopCommerce Suite" finished-at="2025-09-08T14:30:16 IST" duration-ms="70129">
+  <suite started-at="2025-09-08T15:32:45 IST" name="NopCommerce Suite" finished-at="2025-09-08T15:33:55 IST" duration-ms="70406">
     <groups>
     </groups>
-    <test started-at="2025-09-08T14:29:06 IST" name="Smoke" finished-at="2025-09-08T14:30:16 IST" duration-ms="70129">
-      <class name="testcases.PriceFilterTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:testcases.PriceFilterTest@4c39bec8]" started-at="2025-09-08T14:30:16 IST" name="setup" finished-at="2025-09-08T14:30:16 IST" duration-ms="1" status="FAIL">
+    <test started-at="2025-09-08T15:32:45 IST" name="Smoke" finished-at="2025-09-08T15:33:55 IST" duration-ms="70406">
+      <class name="testcases.FilterTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:testcases.FilterTest@7ee8290b]" started-at="2025-09-08T15:33:55 IST" name="setup" finished-at="2025-09-08T15:33:55 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -15,61 +15,29 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.support.ui.WebDriverWait.until(java.util.function.Function)" because "this.wait" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.support.ui.WebDriverWait.until(java.util.function.Function)" because "this.wait" is null
-at Pages.FiltersPage.<init>(FiltersPage.java:20)
-at testcases.PriceFilterTest.setup(PriceFilterTest.java:21)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
-at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="filterByPriceRange()[pri:0, instance:testcases.PriceFilterTest@4c39bec8]" started-at="2025-09-08T14:30:16 IST" name="filterByPriceRange" finished-at="2025-09-08T14:30:16 IST" duration-ms="1" status="SKIP">
+        <test-method signature="filterByCategory()[pri:1, instance:testcases.FilterTest@7ee8290b]" started-at="2025-09-08T15:33:55 IST" name="filterByCategory" finished-at="2025-09-08T15:33:55 IST" duration-ms="2" status="FAIL">
           <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.support.ui.WebDriverWait.until(java.util.function.Function)" because "this.wait" is null]]>
-            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.support.ui.WebDriverWait.until(java.util.function.Function)" because "this.wait" is null
-at Pages.FiltersPage.<init>(FiltersPage.java:20)
-at testcases.PriceFilterTest.setup(PriceFilterTest.java:21)
+              <![CDATA[java.lang.NullPointerException
+at java.base/java.util.Objects.requireNonNull(Objects.java:233)
+at java.base/java.util.ImmutableCollections$Map1.<init>(ImmutableCollections.java:1112)
+at java.base/java.util.Map.of(Map.java:1365)
+at org.openqa.selenium.remote.DriverCommand.GET(DriverCommand.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
+at testcases.FilterTest.filterByCategory(FilterTest.java:27)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
-at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
 at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 at org.testng.TestRunner.privateRun(TestRunner.java:741)
 at org.testng.TestRunner.run(TestRunner.java:616)
@@ -91,14 +59,98 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- filterByPriceRange -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.PriceFilterTest@4c39bec8]" started-at="2025-09-08T14:30:16 IST" name="teardown" finished-at="2025-09-08T14:30:16 IST" duration-ms="0" status="SKIP">
+        </test-method> <!-- filterByCategory -->
+        <test-method signature="filterByPrice()[pri:2, instance:testcases.FilterTest@7ee8290b]" started-at="2025-09-08T15:33:55 IST" name="filterByPrice" finished-at="2025-09-08T15:33:55 IST" duration-ms="2" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at java.base/java.util.Objects.requireNonNull(Objects.java:233)
+at java.base/java.util.ImmutableCollections$Map1.<init>(ImmutableCollections.java:1112)
+at java.base/java.util.Map.of(Map.java:1365)
+at org.openqa.selenium.remote.DriverCommand.GET(DriverCommand.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
+at testcases.FilterTest.filterByPrice(FilterTest.java:39)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filterByPrice -->
+        <test-method signature="filterBySpecification()[pri:3, instance:testcases.FilterTest@7ee8290b]" started-at="2025-09-08T15:33:55 IST" name="filterBySpecification" finished-at="2025-09-08T15:33:55 IST" duration-ms="2" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at java.base/java.util.Objects.requireNonNull(Objects.java:233)
+at java.base/java.util.ImmutableCollections$Map1.<init>(ImmutableCollections.java:1112)
+at java.base/java.util.Map.of(Map.java:1365)
+at org.openqa.selenium.remote.DriverCommand.GET(DriverCommand.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
+at testcases.FilterTest.filterBySpecification(FilterTest.java:48)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filterBySpecification -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.FilterTest@7ee8290b]" started-at="2025-09-08T15:33:55 IST" name="teardown" finished-at="2025-09-08T15:33:55 IST" duration-ms="255" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- testcases.PriceFilterTest -->
+      </class> <!-- testcases.FilterTest -->
       <class name="testcases.RegisterTest">
-        <test-method is-config="true" signature="beforeSuite(java.lang.String)[pri:0, instance:testcases.RegisterTest@33c911a1]" started-at="2025-09-08T14:29:04 IST" name="beforeSuite" finished-at="2025-09-08T14:29:06 IST" duration-ms="1888" status="PASS">
+        <test-method is-config="true" signature="beforeSuite(java.lang.String)[pri:0, instance:testcases.RegisterTest@707194ba]" started-at="2025-09-08T15:32:43 IST" name="beforeSuite" finished-at="2025-09-08T15:32:45 IST" duration-ms="1956" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -107,61 +159,61 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="init()[pri:0, instance:testcases.RegisterTest@33c911a1]" started-at="2025-09-08T14:29:06 IST" name="init" finished-at="2025-09-08T14:29:06 IST" duration-ms="6" status="PASS">
+        <test-method is-config="true" signature="init()[pri:0, instance:testcases.RegisterTest@707194ba]" started-at="2025-09-08T15:32:45 IST" name="init" finished-at="2025-09-08T15:32:45 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="registerNewUser()[pri:1, instance:testcases.RegisterTest@33c911a1]" started-at="2025-09-08T14:29:06 IST" name="registerNewUser" finished-at="2025-09-08T14:29:09 IST" duration-ms="2789" status="PASS">
+        <test-method signature="registerNewUser()[pri:1, instance:testcases.RegisterTest@707194ba]" started-at="2025-09-08T15:32:45 IST" name="registerNewUser" finished-at="2025-09-08T15:32:48 IST" duration-ms="2564" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerNewUser -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:testcases.RegisterTest@33c911a1]" started-at="2025-09-08T14:30:16 IST" name="afterSuite" finished-at="2025-09-08T14:30:17 IST" duration-ms="292" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:testcases.RegisterTest@707194ba]" started-at="2025-09-08T15:33:56 IST" name="afterSuite" finished-at="2025-09-08T15:33:56 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
       </class> <!-- testcases.RegisterTest -->
       <class name="testcases.WishlistTest">
-        <test-method is-config="true" signature="init()[pri:0, instance:testcases.WishlistTest@5b94b04d]" started-at="2025-09-08T14:29:27 IST" name="init" finished-at="2025-09-08T14:29:27 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="init()[pri:0, instance:testcases.WishlistTest@4c39bec8]" started-at="2025-09-08T15:33:05 IST" name="init" finished-at="2025-09-08T15:33:05 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="addProductToWishlist()[pri:8, instance:testcases.WishlistTest@5b94b04d]" started-at="2025-09-08T14:29:27 IST" name="addProductToWishlist" finished-at="2025-09-08T14:29:38 IST" duration-ms="10698" status="PASS">
+        <test-method signature="addProductToWishlist()[pri:8, instance:testcases.WishlistTest@4c39bec8]" started-at="2025-09-08T15:33:05 IST" name="addProductToWishlist" finished-at="2025-09-08T15:33:17 IST" duration-ms="11499" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addProductToWishlist -->
-        <test-method signature="viewWishlistAndMoveToCart()[pri:9, instance:testcases.WishlistTest@5b94b04d]" started-at="2025-09-08T14:29:38 IST" name="viewWishlistAndMoveToCart" finished-at="2025-09-08T14:30:03 IST" duration-ms="25088" status="PASS">
+        <test-method signature="viewWishlistAndMoveToCart()[pri:9, instance:testcases.WishlistTest@4c39bec8]" started-at="2025-09-08T15:33:17 IST" name="viewWishlistAndMoveToCart" finished-at="2025-09-08T15:33:42 IST" duration-ms="25367" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- viewWishlistAndMoveToCart -->
-        <test-method signature="removeWishlistItem()[pri:10, instance:testcases.WishlistTest@5b94b04d]" started-at="2025-09-08T14:30:03 IST" name="removeWishlistItem" finished-at="2025-09-08T14:30:16 IST" duration-ms="12880" status="PASS">
+        <test-method signature="removeWishlistItem()[pri:10, instance:testcases.WishlistTest@4c39bec8]" started-at="2025-09-08T15:33:42 IST" name="removeWishlistItem" finished-at="2025-09-08T15:33:55 IST" duration-ms="12864" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- removeWishlistItem -->
       </class> <!-- testcases.WishlistTest -->
       <class name="testcases.SearchTest">
-        <test-method is-config="true" signature="init()[pri:0, instance:testcases.SearchTest@291caca8]" started-at="2025-09-08T14:29:10 IST" name="init" finished-at="2025-09-08T14:29:10 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="init()[pri:0, instance:testcases.SearchTest@5b94b04d]" started-at="2025-09-08T15:32:49 IST" name="init" finished-at="2025-09-08T15:32:49 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="searchProductByName()[pri:4, instance:testcases.SearchTest@291caca8]" started-at="2025-09-08T14:29:10 IST" name="searchProductByName" finished-at="2025-09-08T14:29:12 IST" duration-ms="1538" status="PASS">
+        <test-method signature="searchProductByName()[pri:4, instance:testcases.SearchTest@5b94b04d]" started-at="2025-09-08T15:32:49 IST" name="searchProductByName" finished-at="2025-09-08T15:32:53 IST" duration-ms="4194" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchProductByName -->
-        <test-method signature="searchResultValidation()[pri:5, instance:testcases.SearchTest@291caca8]" started-at="2025-09-08T14:29:12 IST" name="searchResultValidation" finished-at="2025-09-08T14:29:13 IST" duration-ms="1220" status="PASS">
+        <test-method signature="searchResultValidation()[pri:5, instance:testcases.SearchTest@5b94b04d]" started-at="2025-09-08T15:32:53 IST" name="searchResultValidation" finished-at="2025-09-08T15:32:55 IST" duration-ms="1181" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchResultValidation -->
       </class> <!-- testcases.SearchTest -->
       <class name="testcases.LoginTest">
-        <test-method is-config="true" signature="init()[pri:0, instance:testcases.LoginTest@399c4be1]" started-at="2025-09-08T14:29:09 IST" name="init" finished-at="2025-09-08T14:29:09 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="init()[pri:0, instance:testcases.LoginTest@385e9564]" started-at="2025-09-08T15:32:48 IST" name="init" finished-at="2025-09-08T15:32:48 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="loginValid()[pri:2, instance:testcases.LoginTest@399c4be1]" started-at="2025-09-08T14:29:09 IST" name="loginValid" finished-at="2025-09-08T14:29:10 IST" duration-ms="1267" status="PASS">
+        <test-method signature="loginValid()[pri:2, instance:testcases.LoginTest@385e9564]" started-at="2025-09-08T15:32:48 IST" name="loginValid" finished-at="2025-09-08T15:32:49 IST" duration-ms="1200" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginValid -->
-        <test-method signature="loginInvalid()[pri:3, instance:testcases.LoginTest@399c4be1]" started-at="2025-09-08T14:29:10 IST" name="loginInvalid" finished-at="2025-09-08T14:29:10 IST" duration-ms="15" status="FAIL">
+        <test-method signature="loginInvalid()[pri:3, instance:testcases.LoginTest@385e9564]" started-at="2025-09-08T15:32:49 IST" name="loginInvalid" finished-at="2025-09-08T15:32:49 IST" duration-ms="21" status="FAIL">
           <exception class="org.openqa.selenium.UnhandledAlertException">
             <message>
               <![CDATA[unexpected alert open: {Alert text : Please enter some search keyword}
@@ -169,9 +221,9 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 Build info: version: '4.35.0', revision: '1c58e5028b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [132ee83fe2d124ea339e26443ab84f3e, get {url=https://demo.nopcommerce.com/login}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.155, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\PRUTHV~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60898}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60898/devtoo..., se:cdpVersion: 139.0.7258.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 132ee83fe2d124ea339e26443ab84f3e]]>
+Command: [bb5ed1300097cfdbeedd04e0dd3181ad, get {url=https://demo.nopcommerce.com/login}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.155, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\PRUTHV~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57167}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57167/devtoo..., se:cdpVersion: 139.0.7258.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bb5ed1300097cfdbeedd04e0dd3181ad]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Please enter some search keyword}
@@ -179,9 +231,9 @@ Session ID: 132ee83fe2d124ea339e26443ab84f3e]]>
 Build info: version: '4.35.0', revision: '1c58e5028b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [132ee83fe2d124ea339e26443ab84f3e, get {url=https://demo.nopcommerce.com/login}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.155, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\PRUTHV~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60898}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60898/devtoo..., se:cdpVersion: 139.0.7258.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 132ee83fe2d124ea339e26443ab84f3e
+Command: [bb5ed1300097cfdbeedd04e0dd3181ad, get {url=https://demo.nopcommerce.com/login}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.155, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\PRUTHV~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57167}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57167/devtoo..., se:cdpVersion: 139.0.7258.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bb5ed1300097cfdbeedd04e0dd3181ad
 at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:136)
 at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
@@ -224,11 +276,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
         </test-method> <!-- loginInvalid -->
       </class> <!-- testcases.LoginTest -->
       <class name="testcases.ProductAndCartTest">
-        <test-method is-config="true" signature="init()[pri:0, instance:testcases.ProductAndCartTest@385e9564]" started-at="2025-09-08T14:29:13 IST" name="init" finished-at="2025-09-08T14:29:13 IST" duration-ms="4" status="PASS">
+        <test-method is-config="true" signature="init()[pri:0, instance:testcases.ProductAndCartTest@8c3b9d]" started-at="2025-09-08T15:32:55 IST" name="init" finished-at="2025-09-08T15:32:55 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="addToCartAndVerifyHeader()[pri:6, instance:testcases.ProductAndCartTest@385e9564]" started-at="2025-09-08T14:29:13 IST" name="addToCartAndVerifyHeader" finished-at="2025-09-08T14:29:25 IST" duration-ms="12111" status="FAIL">
+        <test-method signature="addToCartAndVerifyHeader()[pri:6, instance:testcases.ProductAndCartTest@8c3b9d]" started-at="2025-09-08T15:32:55 IST" name="addToCartAndVerifyHeader" finished-at="2025-09-08T15:33:04 IST" duration-ms="9516" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Header cart qty didn't update. expected [true] but found [false]]]>
@@ -271,7 +323,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addToCartAndVerifyHeader -->
-        <test-method signature="viewCartAndVerifyQuantity()[pri:7, instance:testcases.ProductAndCartTest@385e9564]" started-at="2025-09-08T14:29:25 IST" name="viewCartAndVerifyQuantity" finished-at="2025-09-08T14:29:27 IST" duration-ms="1970" status="PASS">
+        <test-method signature="viewCartAndVerifyQuantity()[pri:7, instance:testcases.ProductAndCartTest@8c3b9d]" started-at="2025-09-08T15:33:04 IST" name="viewCartAndVerifyQuantity" finished-at="2025-09-08T15:33:05 IST" duration-ms="799" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- viewCartAndVerifyQuantity -->

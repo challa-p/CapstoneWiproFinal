@@ -11,13 +11,15 @@
           <include name="init"/>
         </methods>
       </class> <!-- testcases.ProductAndCartTest -->
-      <class name="testcases.PriceFilterTest">
+      <class name="testcases.FilterTest">
         <methods>
-          <include name="setup"/>
+          <include name="filterByPrice"/>
+          <include name="filterByCategory"/>
+          <include name="filterBySpecification"/>
           <include name="teardown"/>
-          <include name="filterByPriceRange"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- testcases.PriceFilterTest -->
+      </class> <!-- testcases.FilterTest -->
       <class name="testcases.LoginTest">
         <methods>
           <include name="beforeSuite"/>

@@ -1,4 +1,4 @@
- <project xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -17,11 +17,14 @@
         <!-- upgraded Selenium so DevTools for Chrome 139 is available -->
         <selenium.version>4.35.0</selenium.version>
 
-        <!-- bumped TestNG to avoid version mismatch seen in logs (optional) -->
+        <!-- bumped TestNG to avoid version mismatch seen in logs -->
         <testng.version>7.11.0</testng.version>
 
         <webdrivermanager.version>5.5.3</webdrivermanager.version>
         <encoding>UTF-8</encoding>
+
+        <!-- Lombok version -->
+        <lombok.version>1.18.30</lombok.version>
     </properties>
 
     <dependencies>
@@ -75,18 +78,26 @@
             <version>2.0.7</version>
         </dependency>
 
-        <!-- Optional: ReportNG listener if needed for ExtentReports -->
+        <!-- ReportNG (optional) -->
         <dependency>
             <groupId>org.uncommons</groupId>
             <artifactId>reportng</artifactId>
             <version>1.1.4</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Lombok: provided at runtime (compile-time only) -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Compiler Plugin -->
+            <!-- Compiler Plugin: fork + add-exports/add-opens + annotationProcessorPaths -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -95,6 +106,24 @@
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
                     <encoding>${encoding}</encoding>
+ 
+
+                    <compilerArgs>
+                        <!-- allow lombok to access javac internals on JDK 9+ -->
+                        <arg>--add-exports</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                        <arg>--add-opens</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
+                    </compilerArgs>
+
+                    <!-- ensure annotation processors (lombok) are available -->
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
 
@@ -110,7 +139,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Clean Plugin (optional, standard) -->
+            <!-- Clean Plugin (standard) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>

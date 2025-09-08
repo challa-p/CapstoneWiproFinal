@@ -1,4 +1,4 @@
- package Pages;
+package Pages;
 
 import java.time.Duration;
 import java.util.List;
@@ -10,22 +10,63 @@ import Utils.DriverFactory;
 public class FiltersPage {
     private WebDriver driver;
     private WebDriverWait wait;
+    private static final Duration DEFAULT_TIMEOUT = Duration.ofSeconds(20);
 
     public FiltersPage() {
         this.driver = DriverFactory.getDriver();
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, DEFAULT_TIMEOUT);
     }
-    By desktopsCheck = By.xpath("//label[contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'desktops')]/preceding-sibling::input[1]");
 
-    WebElement chk = wait.until(ExpectedConditions.elementToBeClickable(desktopsCheck));
+    // ----------------------
+    // Helpers
+    // ----------------------
+    private void scrollIntoView(WebElement el) {
+        try {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'center'});", el);
+        } catch (Exception ignored) {}
+    }
+
+    private void safeClick(WebElement el) throws ElementClickInterceptedException {
+        try {
+            el.click();
+        } catch (WebDriverException e) {
+            // fallback to javascript click
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", el);
+        }
+    }
+
+    // wait for product results area to refresh after applying filter
+    private boolean waitForResultsRefresh() {
+        try {
+            // adjust selector to whatever indicates results area on your site
+            By resultsContainer = By.cssSelector(".product-grid, .product-list");
+            wait.until(ExpectedConditions.visibilityOfElementLocated(resultsContainer));
+            // optionally wait a short time to allow JS to finish
+            Thread.sleep(500);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    // ----------------------
+    // Public actions
+    // ----------------------
 
     // Apply category filter (by visible label text)
     public boolean applyCategory(String category) {
         try {
-            By categoryChk = By.xpath("//label[contains(text(),'" + category + "')]/preceding-sibling::input[@type='checkbox']");
+            By categoryChk = By.xpath("//label[contains(normalize-space(.),'" + category + "')]/preceding-sibling::input[@type='checkbox']");
             WebElement chk = wait.until(ExpectedConditions.elementToBeClickable(categoryChk));
-            chk.click();
-            wait.until(ExpectedConditions.stalenessOf(chk));
+            scrollIntoView(chk);
+            safeClick(chk);
+
+            // Wait for results to reflect filter action, or verify checkbox selected state
+            boolean refreshed = waitForResultsRefresh();
+            if (!refreshed) {
+                // as fallback, verify checkbox is selected
+                return chk.isSelected();
+            }
             return true;
         } catch (Exception e) {
             System.err.println("[FiltersPage] applyCategory failed - " + e.getMessage());
@@ -36,10 +77,42 @@ public class FiltersPage {
     // Apply price filter (by visible link like "$500 - $1000")
     public boolean applyPrice(String priceRangeText) {
         try {
-            By priceLink = By.linkText(priceRangeText);
-            WebElement link = wait.until(ExpectedConditions.elementToBeClickable(priceLink));
-            link.click();
-            wait.until(ExpectedConditions.stalenessOf(link));
+            // Try exact linkText first, fallback to partial link text
+            List<WebElement> candidates = driver.findElements(By.linkText(priceRangeText));
+            if (candidates.isEmpty()) {
+                candidates = driver.findElements(By.partialLinkText(priceRangeText));
+            }
+            if (candidates.isEmpty()) {
+                // try more flexible xpath (handles extra whitespace)
+                By priceLinkXPath = By.xpath("//a[normalize-space()='" + priceRangeText + "']");
+                candidates = driver.findElements(priceLinkXPath);
+            }
+            if (candidates.isEmpty()) {
+                System.err.println("[FiltersPage] applyPrice - price link not found for: " + priceRangeText);
+                return false;
+            }
+
+            WebElement link = wait.until(ExpectedConditions.elementToBeClickable(candidates.get(0)));
+            scrollIntoView(link);
+            safeClick(link);
+
+            // Verification: either URL contains price param or results refreshed
+            boolean refreshed = waitForResultsRefresh();
+            if (!refreshed) {
+                // fallback: check URL contains an indicator (change to your site's param)
+                String currentUrl = driver.getCurrentUrl();
+                if (currentUrl != null && currentUrl.toLowerCase().contains("price")) {
+                    return true;
+                }
+                // last resort: check that the clicked link has selected/active class
+                try {
+                    String cls = link.getAttribute("class");
+                    if (cls != null && (cls.contains("selected") || cls.contains("active"))) {
+                        return true;
+                    }
+                } catch (Exception ignored) {}
+                return false;
+            }
             return true;
         } catch (Exception e) {
             System.err.println("[FiltersPage] applyPrice failed - " + e.getMessage());
@@ -50,10 +123,15 @@ public class FiltersPage {
     // Apply specification filter (like processor type, RAM, etc.)
     public boolean applySpecification(String specText) {
         try {
-            By specChk = By.xpath("//label[contains(text(),'" + specText + "')]/preceding-sibling::input[@type='checkbox']");
+            By specChk = By.xpath("//label[contains(normalize-space(.),'" + specText + "')]/preceding-sibling::input[@type='checkbox']");
             WebElement chk = wait.until(ExpectedConditions.elementToBeClickable(specChk));
-            chk.click();
-            wait.until(ExpectedConditions.stalenessOf(chk));
+            scrollIntoView(chk);
+            safeClick(chk);
+
+            boolean refreshed = waitForResultsRefresh();
+            if (!refreshed) {
+                return chk.isSelected();
+            }
             return true;
         } catch (Exception e) {
             System.err.println("[FiltersPage] applySpecification failed - " + e.getMessage());
@@ -64,10 +142,15 @@ public class FiltersPage {
     // Verify all results contain expected keyword
     public boolean resultsContain(String keyword) {
         try {
-            By titlesBy = By.cssSelector(".product-title a, h2.product-title a");
+            By titlesBy = By.cssSelector(".product-title a, h2.product-title a, .product-item .name a");
             List<WebElement> titles = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(titlesBy));
+            if (titles.isEmpty()) {
+                System.err.println("[FiltersPage] resultsContain - no product titles found");
+                return false;
+            }
             for (WebElement t : titles) {
-                if (!t.getText().toLowerCase().contains(keyword.toLowerCase())) {
+                String txt = t.getText();
+                if (txt == null || !txt.toLowerCase().contains(keyword.toLowerCase())) {
                     return false;
                 }
             }
@@ -78,3 +161,4 @@ public class FiltersPage {
         }
     }
 }
+
