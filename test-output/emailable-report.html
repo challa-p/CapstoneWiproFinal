@@ -9,45 +9,18 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">NopCommerce Suite</th></tr>
-<tr><td><a href="#t0">Smoke</a></td><td class="num">8</td><td class="num">0</td><td class="num">0</td><td class="num attn">5</td><td class="num">70,406</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Smoke</a></td><td class="num">8</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">67,924</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">NopCommerce Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Smoke &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">testcases.FilterTest</td><td><a href="#m0">filterByCategory</a></td><td rowspan="1">1757325835281</td><td rowspan="1">2</td></tr><tr class="failedeven"><td><a href="#m1">filterByPrice</a></td><td rowspan="1">1757325835419</td><td rowspan="1">2</td></tr><tr class="failedeven"><td><a href="#m2">filterBySpecification</a></td><td rowspan="1">1757325835551</td><td rowspan="1">2</td></tr><tr class="failedodd"><td rowspan="1">testcases.LoginTest</td><td><a href="#m3">loginInvalid</a></td><td rowspan="1">1757325769338</td><td rowspan="1">21</td></tr><tr class="failedeven"><td rowspan="1">testcases.ProductAndCartTest</td><td><a href="#m4">addToCartAndVerifyHeader</a></td><td rowspan="1">1757325775032</td><td rowspan="1">9516</td></tr><tr><th colspan="4">Smoke &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">testcases.LoginTest</td><td><a href="#m5">loginValid</a></td><td rowspan="1">1757325768136</td><td rowspan="1">1200</td></tr><tr class="passedodd"><td rowspan="1">testcases.ProductAndCartTest</td><td><a href="#m6">viewCartAndVerifyQuantity</a></td><td rowspan="1">1757325784739</td><td rowspan="1">799</td></tr><tr class="passedeven"><td rowspan="1">testcases.RegisterTest</td><td><a href="#m7">registerNewUser</a></td><td rowspan="1">1757325765561</td><td rowspan="1">2564</td></tr><tr class="passedodd"><td rowspan="2">testcases.SearchTest</td><td><a href="#m8">searchProductByName</a></td><td rowspan="1">1757325769649</td><td rowspan="1">4194</td></tr><tr class="passedodd"><td><a href="#m9">searchResultValidation</a></td><td rowspan="1">1757325773846</td><td rowspan="1">1181</td></tr><tr class="passedeven"><td rowspan="3">testcases.WishlistTest</td><td><a href="#m10">addProductToWishlist</a></td><td rowspan="1">1757325785543</td><td rowspan="1">11499</td></tr><tr class="passedeven"><td><a href="#m11">removeWishlistItem</a></td><td rowspan="1">1757325822414</td><td rowspan="1">12864</td></tr><tr class="passedeven"><td><a href="#m12">viewWishlistAndMoveToCart</a></td><td rowspan="1">1757325797044</td><td rowspan="1">25367</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">NopCommerce Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Smoke &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">testcases.LoginTest</td><td><a href="#m0">loginInvalid</a></td><td rowspan="1">1757395667741</td><td rowspan="1">25</td></tr><tr class="failedodd"><td rowspan="1">testcases.ProductAndCartTest</td><td><a href="#m1">addToCartAndVerifyHeader</a></td><td rowspan="1">1757395670901</td><td rowspan="1">9714</td></tr><tr><th colspan="4">Smoke &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">testcases.LoginTest</td><td><a href="#m2">loginValid</a></td><td rowspan="1">1757395666146</td><td rowspan="1">1592</td></tr><tr class="passedodd"><td rowspan="1">testcases.ProductAndCartTest</td><td><a href="#m3">viewCartAndVerifyQuantity</a></td><td rowspan="1">1757395680618</td><td rowspan="1">837</td></tr><tr class="passedeven"><td rowspan="1">testcases.RegisterTest</td><td><a href="#m4">registerNewUser</a></td><td rowspan="1">1757395662490</td><td rowspan="1">3651</td></tr><tr class="passedodd"><td rowspan="2">testcases.SearchTest</td><td><a href="#m5">searchProductByName</a></td><td rowspan="1">1757395667775</td><td rowspan="1">1750</td></tr><tr class="passedodd"><td><a href="#m6">searchResultValidation</a></td><td rowspan="1">1757395669528</td><td rowspan="1">1368</td></tr><tr class="passedeven"><td rowspan="3">testcases.WishlistTest</td><td><a href="#m7">addProductToWishlist</a></td><td rowspan="1">1757395681459</td><td rowspan="1">10714</td></tr><tr class="passedeven"><td><a href="#m8">removeWishlistItem</a></td><td rowspan="1">1757395717458</td><td rowspan="1">12901</td></tr><tr class="passedeven"><td><a href="#m9">viewWishlistAndMoveToCart</a></td><td rowspan="1">1757395692174</td><td rowspan="1">25282</td></tr></tbody>
 </table>
-<h2>Smoke</h2><h3 id="m0">testcases.FilterTest#filterByCategory</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at java.base/java.util.Objects.requireNonNull(Objects.java:233)
-	at java.base/java.util.ImmutableCollections$Map1.&lt;init&gt;(ImmutableCollections.java:1112)
-	at java.base/java.util.Map.of(Map.java:1365)
-	at org.openqa.selenium.remote.DriverCommand.GET(DriverCommand.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
-	at testcases.FilterTest.filterByCategory(FilterTest.java:27)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">testcases.FilterTest#filterByPrice</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at java.base/java.util.Objects.requireNonNull(Objects.java:233)
-	at java.base/java.util.ImmutableCollections$Map1.&lt;init&gt;(ImmutableCollections.java:1112)
-	at java.base/java.util.Map.of(Map.java:1365)
-	at org.openqa.selenium.remote.DriverCommand.GET(DriverCommand.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
-	at testcases.FilterTest.filterByPrice(FilterTest.java:39)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">testcases.FilterTest#filterBySpecification</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at java.base/java.util.Objects.requireNonNull(Objects.java:233)
-	at java.base/java.util.ImmutableCollections$Map1.&lt;init&gt;(ImmutableCollections.java:1112)
-	at java.base/java.util.Map.of(Map.java:1365)
-	at org.openqa.selenium.remote.DriverCommand.GET(DriverCommand.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
-	at testcases.FilterTest.filterBySpecification(FilterTest.java:48)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">testcases.LoginTest#loginInvalid</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Please enter some search keyword}
+<h2>Smoke</h2><h3 id="m0">testcases.LoginTest#loginInvalid</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Please enter some search keyword}
   (Session info: chrome=139.0.7258.155): Please enter some search keyword
 Build info: version: &apos;4.35.0&apos;, revision: &apos;1c58e5028b&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [bb5ed1300097cfdbeedd04e0dd3181ad, get {url=https://demo.nopcommerce.com/login}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.155, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\PRUTHV~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57167}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57167/devtoo..., se:cdpVersion: 139.0.7258.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: bb5ed1300097cfdbeedd04e0dd3181ad
+Command: [a94c18a8fbaed840aac08ed47aee8c3e, get {url=https://demo.nopcommerce.com/login}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.155, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\PRUTHV~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59847}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59847/devtoo..., se:cdpVersion: 139.0.7258.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a94c18a8fbaed840aac08ed47aee8c3e
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:136)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
@@ -58,17 +31,17 @@ Session ID: bb5ed1300097cfdbeedd04e0dd3181ad
 	at testcases.LoginTest.loginInvalid(LoginTest.java:24)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 ... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">testcases.ProductAndCartTest#addToCartAndVerifyHeader</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Header cart qty didn&apos;t update. expected [true] but found [false]
+<h3 id="m1">testcases.ProductAndCartTest#addToCartAndVerifyHeader</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Header cart qty didn&apos;t update. expected [true] but found [false]
 	at testcases.ProductAndCartTest.addToCartAndVerifyHeader(ProductAndCartTest.java:38)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 ... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">testcases.LoginTest#loginValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">testcases.ProductAndCartTest#viewCartAndVerifyQuantity</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m7">testcases.RegisterTest#registerNewUser</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m8">testcases.SearchTest#searchProductByName</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m9">testcases.SearchTest#searchResultValidation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m10">testcases.WishlistTest#addProductToWishlist</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m11">testcases.WishlistTest#removeWishlistItem</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m12">testcases.WishlistTest#viewWishlistAndMoveToCart</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">testcases.LoginTest#loginValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">testcases.ProductAndCartTest#viewCartAndVerifyQuantity</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">testcases.RegisterTest#registerNewUser</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">testcases.SearchTest#searchProductByName</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">testcases.SearchTest#searchResultValidation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">testcases.WishlistTest#addProductToWishlist</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">testcases.WishlistTest#removeWishlistItem</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">testcases.WishlistTest#viewWishlistAndMoveToCart</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

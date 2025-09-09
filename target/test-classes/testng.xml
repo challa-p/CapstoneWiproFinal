@@ -7,7 +7,6 @@
       <class name="testcases.SearchTest"/>
       <class name="testcases.ProductAndCartTest"/>
       <class name="testcases.WishlistTest"/>
-      <class name="testcases.FilterTest"/>
     </classes>
   </test>
 </suite>

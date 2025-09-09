@@ -3,6 +3,14 @@
 <suite name="Failed suite [NopCommerce Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Smoke(failed)">
     <classes>
+      <class name="testcases.LoginTest">
+        <methods>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+          <include name="loginInvalid"/>
+          <include name="init"/>
+        </methods>
+      </class> <!-- testcases.LoginTest -->
       <class name="testcases.ProductAndCartTest">
         <methods>
           <include name="beforeSuite"/>
@@ -11,23 +19,6 @@
           <include name="init"/>
         </methods>
       </class> <!-- testcases.ProductAndCartTest -->
-      <class name="testcases.FilterTest">
-        <methods>
-          <include name="filterByPrice"/>
-          <include name="filterByCategory"/>
-          <include name="filterBySpecification"/>
-          <include name="teardown"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- testcases.FilterTest -->
-      <class name="testcases.LoginTest">
-        <methods>
-          <include name="beforeSuite"/>
-          <include name="afterSuite"/>
-          <include name="init"/>
-          <include name="loginInvalid"/>
-        </methods>
-      </class> <!-- testcases.LoginTest -->
     </classes>
   </test> <!-- Smoke(failed) -->
 </suite> <!-- Failed suite [NopCommerce Suite] -->
